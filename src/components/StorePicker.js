@@ -2,9 +2,17 @@ import React from 'react';
 import { getFunName } from '../helpers';
 
 class StorePicker extends React.Component {
+  constructor() {
+    super();
+    this.goToStore = this.goToStore.bind(this);
+  }
+
   goToStore(event) {
     event.preventDefault();
     console.log('You changed the URL');
+
+    // first grab the test from the box
+    console.log(this.storeInput.value);
   }
 
   render() {
