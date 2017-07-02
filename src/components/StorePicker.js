@@ -2,6 +2,11 @@ import React from 'react';
 import { getFunName } from '../helpers';
 
 class StorePicker extends React.Component {
+  goToStore(event) {
+    event.preventDefault();
+    console.log('You changed the URL');
+  }
+
   render() {
     // Can use JS comment format here
     return (
