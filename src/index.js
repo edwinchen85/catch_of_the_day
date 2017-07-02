@@ -18,4 +18,4 @@ const Root = () => {
   )
 }
 
-render(<App/>, document.querySelector('#main'));
+render(<Root/>, document.querySelector('#main'));
