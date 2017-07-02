@@ -18,7 +18,7 @@ class StorePicker extends React.Component {
   render() {
     // Can use JS comment format here
     return (
-      <form className="store-selector" onSubmit={this.goToStore.bind(this)}>
+      <form className="store-selector" onSubmit={(e) => this.goToStore(e)}>
         { /* JSX Comment */ }
         <h2>Please Enter A Store</h2>
         <input type="text" required placeholder="Store Name" defaultValue={getFunName()} ref={(input) => { this.storeInput = input }} />
