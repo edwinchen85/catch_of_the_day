@@ -7,4 +7,10 @@ import App from './components/App';
 
 // import StorePicker from './components/StorePicker';
 
+const Root = () => {
+  return (
+    <BrowserRouter></BrowserRouter>
+  )
+}
+
 render(<App/>, document.querySelector('#main'));
