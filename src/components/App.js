@@ -11,6 +11,8 @@ class App extends React.Component {
       fishes: {},
       order: {}
     };
+
+    this.addFish = this.addFish.bind(this);
   }
 
   addFish(fish) {
