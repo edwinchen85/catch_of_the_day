@@ -2,6 +2,15 @@ import React from 'react';
 import { formatPrice } from '../helpers';
 
 class Order extends React.Component {
+  constructor() {
+    super();
+    this.renderOrder = this.renderOrder.bind(this);
+  }
+
+  renderOrder(key) {
+
+  }
+
   render() {
     const orderIds = Object.keys(this.props.order);
     const total = orderIds.reduce((prevTotal, key) => {
