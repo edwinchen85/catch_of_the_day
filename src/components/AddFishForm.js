@@ -9,14 +9,14 @@ class AddFishForm extends React.Component {
   render() {
     return (
       <form className="fish-edit" onSubmit={e => this.createFish(e)}>
-        <input type="text" placeholder="Fish Name" />
-        <input type="text" placeholder="Fish Price" />
-        <select>
+        <input ref={input => this.name = input} type="text" placeholder="Fish Name" />
+        <input ref={input => this.price = input} type="text" placeholder="Fish Price" />
+        <select ref={input => this.status = input}>
           <option value="available">Fresh!</option>
           <option value="unavailable">Sold out!</option>
         </select>
-        <textarea placeholder="Fish Desc"></textarea>
-        <input type="text" placeholder="Fish Image" />
+        <textarea ref={input => this.desc = input} placeholder="Fish Desc"></textarea>
+        <input ref={input => this.image = input} type="text" placeholder="Fish Image" />
         <button type="submit">+ Add Item</button>
       </form>
     )
