@@ -20,6 +20,13 @@ class App extends React.Component {
     this.addToOrder = this.addToOrder.bind(this);
   }
 
+  componentWillMount() {
+    this.ref = base.syncState(`${this.props.params.storeId}/fishes`, {
+      context: this,
+      state: 'fishes'
+    });
+  }
+
   addFish(fish) {
     // update our state
     const fishes = {...this.state.fishes};
