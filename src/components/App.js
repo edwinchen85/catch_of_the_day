@@ -32,8 +32,8 @@ class App extends React.Component {
   }
 
   componentWillUpdate(nextProps, nextState) {
-    console.log('Something changed');
-    console.log({nextProps, nextState});
+    localStorage.setItem(`order-${this.props.params.storeId}`, JSON.stringify(nextState.order));
+    // cannot store localStorage value in object, hence turn into string.
   }
 
   addFish(fish) {
@@ -74,7 +74,11 @@ class App extends React.Component {
             }
           </ul>
         </div>
-        <Order fishes={this.state.fishes} order={this.state.order} />
+        <Order
+          fishes={this.state.fishes}
+          order={this.state.order}
+          params={this.props.params}
+        />
         <Inventory addFish={this.addFish} loadSamples={this.loadSamples} />
       </div>
     )
