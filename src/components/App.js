@@ -106,6 +106,7 @@ class App extends React.Component {
         />
         <Inventory
           addFish={this.addFish}
+          removeFish={this.removeFish}
           loadSamples={this.loadSamples}
           fishes={this.state.fishes}
           updateFish={this.updateFish}
