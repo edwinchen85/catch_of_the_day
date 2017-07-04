@@ -9,7 +9,12 @@ class Inventory extends React.Component {
   }
 
   handleChange(e, key) {
-
+    const fish = this.props.fishes[key];
+    // take a copy of that fish and update it with the new data
+    const updatedFish = {
+      ...fish,
+      [e.target.name]: e.target.value
+    }
   }
 
   renderInventory(key) {
