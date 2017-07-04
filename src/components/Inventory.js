@@ -5,6 +5,11 @@ class Inventory extends React.Component {
   constructor() {
     super();
     this.renderInventory = this.renderInventory.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e, key) {
+
   }
 
   renderInventory(key) {
