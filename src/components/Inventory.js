@@ -6,6 +6,7 @@ class Inventory extends React.Component {
     super();
     this.renderInventory = this.renderInventory.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.renderLogin = this.renderLogin.bind(this);
   }
 
   handleChange(e, key) {
@@ -16,6 +17,10 @@ class Inventory extends React.Component {
       [e.target.name]: e.target.value
     }
     this.props.updateFish(key, updatedFish);
+  }
+
+  renderLogin() {
+
   }
 
   renderInventory(key) {
