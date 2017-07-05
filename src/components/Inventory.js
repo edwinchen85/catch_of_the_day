@@ -58,6 +58,15 @@ class Inventory extends React.Component {
       return <div>{this.renderLogin()}</div>
     }
 
+    // Check if they are the owner of the current store
+    if(this.state.uid !== this.state.owner) {
+      return (
+        <div>
+          <p>Sorry you aren't the owner of this store!</p>
+        </div>
+      )
+    }
+
     return (
       <div>
         <h2>Inventory</h2>
