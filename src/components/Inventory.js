@@ -7,6 +7,10 @@ class Inventory extends React.Component {
     this.renderInventory = this.renderInventory.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.renderLogin = this.renderLogin.bind(this);
+    this.state = {
+      uid: null,
+      owner: null
+    }
   }
 
   handleChange(e, key) {
@@ -49,6 +53,11 @@ class Inventory extends React.Component {
   }
 
   render() {
+    // check if they are not logged in at all
+    if(!this.state.uid) {
+      return <div>{this.renderLogin()}</div>
+    }
+
     return (
       <div>
         <h2>Inventory</h2>
