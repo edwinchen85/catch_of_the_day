@@ -1,5 +1,6 @@
 import React from 'react';
 import AddFishForm from './AddFishForm';
+import base from '../base';
 
 class Inventory extends React.Component {
   constructor() {
@@ -8,6 +9,7 @@ class Inventory extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.renderLogin = this.renderLogin.bind(this);
     this.authenticate = this.authenticate.bind(this);
+    this.authHandler = this.authHandler.bind(this);
     this.state = {
       uid: null,
       owner: null
@@ -26,6 +28,15 @@ class Inventory extends React.Component {
 
   authenticate(provider) {
     console.log(`Trying to log in with ${provider}`);
+    base.authWithOAuthPopup(provider, this.authHandler);
+  }
+
+  authHandler(err, authData) {
+    console.log(authData);
+    if(err) {
+      console.log(err);
+      return;
+    }
   }
 
   renderLogin() {
